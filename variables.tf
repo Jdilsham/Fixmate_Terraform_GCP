@@ -11,11 +11,11 @@ variable "region" {
 
 variable "zone" {
   description = "The GCP zone"
-  type = string
-  default = "asia-south1-a"
+  type        = string
+  default     = "asia-south1-a"
 }
 
 variable "db_password" {
-  description = "Database password"
-  sensitive = true
+  description = "Cloud SQL database password"
+  sensitive   = true
 }
