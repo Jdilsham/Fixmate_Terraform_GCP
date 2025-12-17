@@ -3,7 +3,7 @@ output "vpc_name" {
 }
 
 output "gke_cluster_name" {
-  value = module.gke.name
+  value = google_container_cluster.gke.name
 }
 
 output "artifact_registry_url" {

@@ -11,7 +11,7 @@ resource "google_service_networking_connection" "private_vpc_connection" {
   depends_on = [
     google_compute_global_address.private_ip_range
   ]
-  
+
   network                 = module.vpc.network_self_link
   service                 = "servicenetworking.googleapis.com"
   reserved_peering_ranges = ["google-managed-services-fixmate"]
