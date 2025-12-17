@@ -15,7 +15,7 @@ module "gke" {
   network    = module.vpc.network_name
   subnetwork = module.vpc.subnets_names[0]
 
-  initial_node_count = 1
+  remove_default_node_pool = true
 
   ip_range_pods     = "pods"
   ip_range_services = "services"

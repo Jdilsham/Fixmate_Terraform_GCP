@@ -1,5 +1,3 @@
-
-
 module "service_account" {
   source  = "terraform-google-modules/service-accounts/google"
   version = "~>4.0"
@@ -20,7 +18,7 @@ module "ci_iam_bindings" {
   source  = "terraform-google-modules/iam/google//modules/projects_iam"
   version = "~>8.2"
 
-  projects = var.project_id
+  projects = [var.project_id]
 
   bindings = {
     "roles/artifactregistry.writer" = [
@@ -45,7 +43,7 @@ module "project_iam_bindings" {
   source  = "terraform-google-modules/iam/google//modules/projects_iam"
   version = "~> 8.2"
 
-  projects = var.project_id
+  projects = [var.project_id]
 
   bindings = {
     "roles/cloudsql.client" = [
