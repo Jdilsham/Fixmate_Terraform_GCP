@@ -9,10 +9,14 @@ variable "region" {
   default     = "asia-south1"
 }
 
-variable "zone" {
+variable "zones" {
   description = "The GCP zone"
   type        = string
-  default     = "asia-south1-a"
+  default = [
+    "asia-south1-a",
+    "asia-south1-b",
+    "asia-south1-c"
+  ]
 }
 
 variable "db_password" {
