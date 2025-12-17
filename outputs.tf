@@ -14,6 +14,8 @@ output "cloudsql_instance_name" {
   value = google_sql_database_instance.fixmate.name
 }
 
-output "ci_service_account" {
-  value = "fixmate-ci@${var.project_id}.iam.gserviceaccount.com"
+output "service_account" {
+  value = module.service_account.emails[0]
 }
+
+

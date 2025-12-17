@@ -1,0 +1,13 @@
+resource "google_project_service" "services" {
+  for_each = toset([
+    "container.googleapis.com",
+    "compute.googleapis.com",
+    "iam.googleapis.com",
+    "sqladmin.googleapis.com",
+    "artifactregistry.googleapis.com",
+    "servicenetworking.googleapis.com"
+  ])
+
+  project = var.project_id
+  service = each.value
+}
