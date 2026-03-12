@@ -14,8 +14,7 @@ variable "zones" {
   type        = list(string)
   default = [
     "asia-south1-a",
-    "asia-south1-b",
-    "asia-south1-c"
+    "asia-south1-b"
   ]
 }
 

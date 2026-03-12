@@ -31,6 +31,10 @@ resource "google_sql_database_instance" "fixmate" {
   settings {
     tier = "db-f1-micro"
 
+    backup_configuration {
+      enabled = true
+    }
+
     ip_configuration {
       ipv4_enabled    = false
       private_network = module.vpc.network_self_link

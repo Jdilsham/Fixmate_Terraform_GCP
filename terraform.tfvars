@@ -1,2 +1,2 @@
-project_id  = "fixmate-prod"
+project_id  = "fixmate-terraform"
 db_password = "fixmate"

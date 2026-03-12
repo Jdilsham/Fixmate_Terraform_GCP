@@ -6,6 +6,7 @@ module "service_account" {
   names      = ["fixmate-gke-sa"]
 }
 
+
 module "ci_service_account" {
   source  = "terraform-google-modules/service-accounts/google"
   version = "~>4.0"
@@ -13,6 +14,7 @@ module "ci_service_account" {
   project_id = var.project_id
   names      = ["fixmate-ci"]
 }
+
 
 module "ci_iam_bindings" {
   source  = "terraform-google-modules/iam/google//modules/projects_iam"

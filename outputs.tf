@@ -14,8 +14,13 @@ output "cloudsql_instance_name" {
   value = google_sql_database_instance.fixmate.name
 }
 
-output "service_account" {
-  value = module.service_account.emails[0]
+output "gke_service_account" {
+  value = values(module.service_account.emails)[0]
 }
+
+output "ci_service_account" {
+  value = values(module.ci_service_account.emails)[0]
+}
+
 
 
