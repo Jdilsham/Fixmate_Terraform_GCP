@@ -66,10 +66,6 @@ resource "google_container_node_pool" "primary" {
       enable_secure_boot = true
     }
 
-    workload_metadata_config {
-      mode = "GKE_METADATA"
-    }
-
     labels = {
       env = "dev"
       app = "fixmate"
