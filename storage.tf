@@ -4,12 +4,11 @@ resource "google_storage_bucket" "fixmate_files" {
   force_destroy               = false
   uniform_bucket_level_access = true
 
-  public_access_prevention = "enforced"
+  public_access_prevention = "inherited"
 }
 
-resource "google_storage_bucket_iam_member" "fixmate_backend_bucket_access" {
+resource "google_storage_bucket_iam_member" "public_read" {
   bucket = google_storage_bucket.fixmate_files.name
-  role   = "roles/storage.objectAdmin"
-
-  member = "serviceAccount:fixmate-gke-sa@fixmate-490017.iam.gserviceaccount.com"
+  role   = "roles/storage.objectViewer"
+  member = "allUsers"
 }
