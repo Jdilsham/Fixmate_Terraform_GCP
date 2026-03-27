@@ -41,11 +41,9 @@ resource "google_container_node_pool" "primary" {
   location = var.region
   project  = var.project_id
 
-  node_count = 1
-
   autoscaling {
     min_node_count = 1
-    max_node_count = 2
+    max_node_count = 3
   }
 
   management {
@@ -54,7 +52,7 @@ resource "google_container_node_pool" "primary" {
   }
 
   node_config {
-    machine_type    = "e2-medium"
+    machine_type    = "e2-standard-2"
     disk_size_gb    = 20
     service_account = "fixmate-gke-sa@${var.project_id}.iam.gserviceaccount.com"
 
